@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closures in JavaScript</title>
+</head>
+
+<body>
+
+    <script>
+        // function init(){
+        //     let name = 'Mozilla'
+        //     console.log('Hello 1: ' + name);
+        //     let displayName = function displayName(){
+        //         console.log('I am c ' + name);
+        //     }
+        //     console.log('I am y ' + name);
+        //     name = 'Hamza'
+        //     console.log('I am z ' + name);
+        //     return displayName
+        // }
+
+        // c =init()
+        // c()
+
+        const FuncR = () => {
+            let a = 0
+            console.log('FuncR:' + a);
+            const x = () => {
+                let a = 1
+                console.log('x:' + a);
+                const y = () => {
+                    let a = 2
+                    console.log('y:' + a);
+                    const z = () => {
+                        let a = 3
+                        console.log('z:' + a);
+                    }
+                    z()
+                }
+                a = 999;
+                y()
+            }
+            return x
+        }
+
+        let a = FuncR()
+        a()
+    </script>
+</body>
+
+</html>

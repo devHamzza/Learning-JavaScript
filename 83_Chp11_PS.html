@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 11 Practice Set</title>
+</head>
+<body>
+    <h1>Chapter 11 Practice Set</h1>
+    <script>
+
+//         // Question No.1 and 2
+//         console.log('Answers for Question 1 and 2');
+//         class Complex{
+//             constructor(real, imaginary){
+//                 this.real = real
+//                 this.imaginary = imaginary
+//             }
+
+//             number(){
+//                 console.log(`Complex Numer = ${this.real} + ${this.imaginary}i`);
+//             }
+
+//             add(num){
+//                 this.real = this.real + num.real
+//                 this.imaginary = this.imaginary + num.imaginary
+//                 console.log('Numbers are Added');
+//                 console.log(`Resulting Complex Number: ${this.real} + ${this.imaginary}i`);
+//             }
+//         }
+
+// let CN1 = new Complex(2, 3);
+// let CN2 = new Complex(4, 5);
+// CN1.number()
+// CN2.number()
+// CN1.add(CN2);
+
+// console.log('Answers for Question 1 and 2 Completed');
+
+console.log('Answer for Question 5');
+
+ // Question No.5
+        class Complex{
+            constructor(real, imaginary){
+                this.real = real
+                this.imaginary = imaginary
+            }
+
+            number(){
+                console.log(`Complex Numer = ${this.real} + ${this.imaginary}i`);
+            }
+
+            get real(){
+                return this._real
+            }
+
+            get imaginary(){
+                return this._imaginary
+            }
+
+            set real(newreal){
+                this._real = newreal
+            }
+
+            set imaginary(newimaginary){
+                this._imaginary = newimaginary
+            }
+
+            add(num){
+                this.real = this.real + num.real
+                this.imaginary = this.imaginary + num.imaginary
+                console.log('Numbers are Added');
+                console.log(`Resulting Complex Number: ${this.real} + ${this.imaginary}i`);
+            }
+        }
+
+let CN1 = new Complex(2, 3);
+CN1.real = 7
+CN1.imaginary = 8
+let CN2 = new Complex(4, 5);
+CN1.number()
+CN2.number()
+CN1.add(CN2);
+
+
+    </script>
+</body>
+</html>

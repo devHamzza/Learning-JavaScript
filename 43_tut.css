@@ -1,0 +1,19 @@
+body {
+    display: flex;
+    flex-direction: column;
+   justify-content: center;
+   margin: auto;
+
+}
+
+div {
+   font-family: 'Segoe UI', sans-serif;
+   background: #ffe0e0;
+   
+   display: inline-block;
+   padding: 2rem;
+   text-align: center;
+   width: 50%;
+   border-radius: 20px;
+   margin: 2rem auto;
+}

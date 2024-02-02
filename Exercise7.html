@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator in JavaScript</title>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Password Generator</h1>
+        <div class="input-group">
+          <label for="length">Password Length:</label>
+          <input type="number" id="length" min="6" max="20" required>
+        </div>
+        <div class="input-group">
+          <label for="type">Password Type:</label>
+          <select id="type">
+            <option value="strong">Strong</option>
+            <option value="easy">Easy</option>
+            <option value="funny">Funny</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <button id="generate-btn">Generate Password</button>
+        </div>
+        <div class="password-container">
+          <input type="text" id="password" readonly>
+          <button id="copy-btn">Copy</button>
+        </div>
+      </div>
+
+
+    <script>
+        // Function to generate a random password
+function generatePassword(length, type) {
+  var charset = "";
+
+  if (type === "strong") {
+    charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+~`|}{[]\\:;?><,./-=";
+  } else if (type === "easy") {
+    charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  } else if (type === "funny") {
+    charset = "1234567890";
+  }
+
+  var password = "";
+
+  for (var i = 0; i < length; i++) {
+    var randomIndex = Math.floor(Math.random() * charset.length);
+    password += charset.charAt(randomIndex);
+  }
+
+  return password;
+}
+
+// Generate button click event handler
+document.getElementById("generate-btn").addEventListener("click", function () {
+  var length = document.getElementById("length").value;
+  var type = document.getElementById("type").value;
+
+  var password = generatePassword(length, type);
+  document.getElementById("password").value = password;
+});
+
+// Copy button click event handler
+document.getElementById("copy-btn").addEventListener("click", function () {
+  var passwordField = document.getElementById("password");
+  passwordField.select();
+  document.execCommand("copy");
+});
+
+
+    </script>
+</body>
+</html>

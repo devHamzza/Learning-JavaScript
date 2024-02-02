@@ -1,0 +1,38 @@
+body {
+    display: flex;
+    justify-content: center;
+    margin: 3rem auto;
+}
+
+div {
+    font-family: Calibri,  'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    text-align: center;
+    background-color: #292929;
+    padding: 2rem;
+    border-radius: 30px;
+    width: 70%;
+}
+
+h1 {
+     color: rgb(255, 238, 0);
+     font-size: 2.7rem;
+    transition: .3s ease-in-out;
+
+}
+
+p {
+    font-weight: 600;
+    font-size: 1.1rem;
+    font-family: cursive;
+    padding: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    color: rgb(255, 230, 0);
+    border: 1px solid rgb(255, 230, 0);
+    transition: .3s ease-in-out;
+}
+
+p:hover {
+    background: rgb(255, 230, 0);
+    color: black;
+}

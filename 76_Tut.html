@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes and Objects in JavaScript</title>
+</head>
+<body>
+    
+    <script>
+
+         class RailwayForm {
+            submit() {
+                alert(this.name + ": Form Submitted with Train No: " + this.number)
+            }
+
+            Cancel() {
+                alert(this.name + ": Form is Cancelled, He didn't accepted Train No: " + this.number)
+            }
+
+            fill(PersonName, TrainNumber){
+                this.name = PersonName
+                this.number = TrainNumber
+            }
+         }
+
+         let HarryForm = new RailwayForm()
+         HarryForm.fill("Harry", 453)
+         let HamzaForm = new RailwayForm()
+         HamzaForm.fill("Hamza", 518)
+
+
+
+         HarryForm.submit()
+         HamzaForm.Cancel()
+
+    </script>
+</body>
+</html>

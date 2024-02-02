@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Constructor and Class Inheritence</title>
+</head>
+<body>
+    <script>
+        class Animal {
+            constructor(Name, Eat, Height, Color){
+             this.Name = Name;
+                this.Eat = Eat;
+                this.Height = '5';
+                this.Color = Color;
+            }
+
+            WhatEat(){
+                console.log(`${this.Name} Eats ${this.Eat}.`);
+            }
+
+            WhatHieght(){
+                console.log(`Its Height is ${this.Height}ft.`);
+            }
+
+            WhatColor(){
+                console.log(`It is of ${this.Color} color.`);
+            }
+
+            HowRun(){
+                console.log(`${this.Name} Runs Very Fast`)
+            }
+            IsDangerous(){
+                console.log(`No, ${this.Name} is not a Dangerous Animal`)
+            }
+        }
+
+        class Cheetah extends Animal {
+             constructor(Name, Eat, Height, Color){
+                super(Name, Eat, Height, Color)
+            }
+
+            IsDangerous(){
+                console.log(`Yes ${this.Name} is a Dangerous Animal`)
+            }
+        }
+
+        let Animal_1 = new Animal('Monkey', 'Banana', '', 'Brown');
+        Animal_1.WhatEat()
+        Animal_1.WhatHieght()
+        Animal_1.WhatColor()
+        Animal_1.IsDangerous()
+        let Cheetah_1 = new Cheetah('Shera', 'Mangoes', '', 'Yellow and Orange')
+        Cheetah_1.WhatEat()
+        Cheetah_1.WhatHieght()
+        Cheetah_1.WhatColor()
+        Cheetah_1.HowRun()
+        Cheetah_1.IsDangerous();
+    </script>
+</body>
+</html>

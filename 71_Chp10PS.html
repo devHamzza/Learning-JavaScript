@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 10 Practice Set - JavaScript</title>
+</head>
+
+<body>
+
+    <input id="input" type="text">
+    <button onclick="NoteSaving()" type="submit">Save</button>
+    <h2 id="head"></h2>
+    <h2 id="note1"></h2>
+    <P id="notep"></P>
+    <h4 id="del"></h4>
+    <span id="delete" onclick="DeleteNote()" style="text-decoration: underline; cursor: pointer;;"></span>
+    <script>
+
+        const NoteSaving = async () => {
+            let note = document.querySelector('input').value
+            await localStorage.setItem("Note", note);
+
+                document.getElementById('head').innerHTML = 'Note Saved <span onclick="ViewNote()" style="text-decoration: underline; cursor: pointer;">Tape Here</span> to view'
+
+            
+        }
+        
+        
+       async function  ViewNote() {
+            let b = await localStorage.getItem('Note');
+           document.getElementById('note1').innerHTML = "Note:"
+           document.getElementById('notep').innerHTML = b
+
+           setTimeout(() => {
+               document.getElementById('del').innerHTML = "Tap to Delete the Note"
+               document.getElementById('delete').innerHTML = ' Delete'
+           }, 2000);
+        }
+
+        async function  DeleteNote() {
+            let b = await localStorage.removeItem('Note');
+            
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Method Over-Riding and Super Key-Word In JavaScript</title>
+</head>
+<body>
+    
+    <script>
+        class Employee {
+            constructor(Name, Id){
+                this.Name = Name
+                this.Id = Id
+            }
+
+            LogIn(){
+                console.log(`${this.Name} with Id: ${this.Id} has Loged In`);
+            }
+
+            RequestLeaves(x){
+                console.log(`He has requested ${x} Leaves`);
+            }
+
+            LogOut(){
+                console.log(`${this.Name} with Id: ${this.Id} has Loged Out`);
+            }
+        }
+
+        class Programmer extends Employee {
+            constructor(Name, Id){
+                super(Name, Id)
+            }
+
+            RequestLeaves(x){
+                super.RequestLeaves(x);
+                console.log(`One Extra Leave is granted by the boss as bounus.`);
+                console.log(`${this.Name} has granted ${x+1} Leaves`);
+            }
+        }
+
+        let Hamza = new Programmer('Hamza', 56)
+        Hamza.LogIn()
+        Hamza.RequestLeaves(5)
+        Hamza.LogOut()
+    </script>
+</body>
+</html>

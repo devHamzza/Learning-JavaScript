@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+<body>
+
+    <script>
+        
+        class GetNotified {
+            constructor(Name, EventName, WhoMentioned){
+                this.Name = Name;
+                this.EventName = EventName;
+                this.WhoMentioned = WhoMentioned;
+            }
+
+            name_sender(){
+                alert(`${this.Name} has sent you freind request`);
+            }
+
+            new_event(){
+                alert(`There is an event named "${this.EventName}", You might be intrerested`);
+            }
+
+            mention(){
+                alert(`${this.WhoMentioned} has just mentioned you in a comment`);
+            }
+        }
+
+        let GetingNotified = new GetNotified('', 'A Cricket Match', 'Hassan')
+        // GetingNotified.name_sender()
+        GetingNotified.new_event()
+        GetingNotified.mention()
+    </script>
+    
+</body>
+</html>

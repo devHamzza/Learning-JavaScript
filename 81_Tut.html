@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static Methoods - JavaScript</title>
+</head>
+<body>
+    <script>
+        class child {
+            constructor(name, nickname){
+                this.name = child.CapitalizeFirstLetter(name)
+                this.nickname = child.CapitalizeFirstLetter(nickname)
+            }
+        intro(){
+            alert(`${this.name} is a little boy, His nickname is ${this.nickname}`)
+        }
+
+        static CapitalizeFirstLetter(ChildName){
+            return ChildName.charAt(0).toUpperCase() + ChildName.substr(1, name.lenght)
+        }
+
+        }
+
+        let NewChild = new child('shawaiz', 'shavi')
+        NewChild.intro()
+    </script>
+</body>
+</html>

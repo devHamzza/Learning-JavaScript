@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock using JavaScript</title>
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 100vh;
+            font-family: Helvetica, sans-serif;
+            background: #121212;
+        }
+
+        h2 {
+            color: #FFF;
+            opacity: 0.2;
+            margin-bottom: -0.6rem;
+        }
+
+        h1 {
+            color: #efc700;
+            font-size: 6rem;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Creating a Clock Using JavaScript's SetInterval method</h2>
+    <h1 id="time"></h1>
+    
+    <script>
+        setInterval(() => {
+            let a = new Date().toLocaleTimeString()
+       document.getElementById('time').innerHTML = a;
+        }, 1000);
+       
+    </script>
+</body>
+</html>

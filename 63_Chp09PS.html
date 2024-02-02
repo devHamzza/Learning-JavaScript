@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 09 Practice Set</title>
+</head>
+
+<body>
+
+    <script>
+        // Answer N0.1
+
+        //  function loadscript(src)  {
+
+        //     return new Promise((resolve, reject) => {
+        //         let script = document.createElement('script')
+        //         script.src = src
+        //         script.onload = () => {
+        //             resolve("Script is has been Loaded")
+        //         } 
+
+        //         script.onerror = (error) => {
+        //             reject("Some error has occured " + error)
+        //         }
+
+        //         document.body.appendChild(script);
+        //     })
+        // }
+
+        // loadscript("63_Chp09PS.js").then( value =>{
+        //     console.log(value);
+        // })
+
+
+        // Answer N0.2
+
+        // let call = async () => {
+        //     console.log(new Date());
+        //     await loadscript("63_Chp09PS.js").catch(error =>{
+        //         console.log(error);
+        //     })
+        //     console.log(new Date());
+        // }
+
+        // call()
+
+
+        // Answer N0.3
+
+        // let PromiseFunction = () => {
+        //     return new Promise((resolve, reject) => {
+        //         setTimeout(() => {
+        //             reject(new Error("This is an Error"))
+        //         }, 3000);
+        //     })
+        // }
+
+        // let functionP = async () => {
+        //     try {
+        //         let a = await PromiseFunction();
+        //         console.log(a);
+        //     } catch (error) {
+        //          console.log("An Error has occured which is being handled... Please Wait getting details...");
+        //           setTimeout(() => {
+        //             console.log("Some one please Call CEO as the error can not be resolved...");
+        //         }, 10000);
+        //         console.log("Error giving message: " + error.message);
+        //         console.log(error.stack);
+        //     }
+        // }
+
+        // functionP()
+
+        // Answer N0.5
+
+        let p1 = () => {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve("Hello I am P1")
+                }, 4000);
+            })
+        }
+
+        let p2 = () => {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve("Hello I am P2")
+                }, 2000);
+            })
+        }
+
+        let p3 = () => {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve("Hello I am P3")
+                }, 3000);
+            })
+        }
+
+        // let run = async () => {
+
+        //     console.time("Run");
+        //     let a1 = await p1()
+        //     console.log(a1);
+        //     let a2 = await p2()
+        //     console.log(a2);
+        //     let a3 = await p3()
+        //     console.log(a3);
+        //     console.timeEnd("Run");
+
+        // }
+
+        let run = async () => {
+
+            console.time("Run");
+            let a1 = p1()
+            let a2 = p2()
+            let a3 = p3()
+
+            let values = await Promise.all([a1, a2, a3]);
+            console.log(values);
+            console.timeEnd("Run");
+
+        }
+
+        run()
+
+
+
+    </script>
+</body>
+
+</html>

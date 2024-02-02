@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing API</title>
+</head>
+<body>
+    <!-- https://api.openweathermap.org/data/2.5/weather?q=shorkot&units=metric&appid=80579ed679114de349886b0843234caa -->
+
+    <script>
+async function FetchAPI() {
+    let response = await fetch('http://api.weatherapi.com/v1/search.json?key=aef6e326fdf34020b05121631230706&q=jhang');
+    let r = await response.json()
+    console.log(r);
+    
+}
+
+FetchAPI()
+         
+    </script>
+</body>
+</html>

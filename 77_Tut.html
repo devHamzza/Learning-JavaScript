@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes and Objects in JavaScript</title>
+</head>
+<body>
+    
+    <script>
+
+         class RailwayForm {
+            constructor(PersonName, TrainNumber, PersonAdress){
+                console.log('Constructor Called ', PersonName +' '+ TrainNumber +' '+ PersonAdress);
+                this.name = PersonName
+                this.number = TrainNumber
+                this.address = PersonAdress
+            }
+            submit() {
+                alert(this.name + ": Form Submitted with Train No: " + this.number + ' His address: '+ this.address)
+            }
+
+            Cancel() {
+                alert(this.name + ": Form is Cancelled, He didn't accepted Train No: " + this.number)
+            }
+         }
+
+         let YourName = prompt("Enter your Name");
+         let YourTrainNumber = prompt("Enter your Train Number");
+         let YourAddress = prompt("Enter your Address");
+         let HamzaForm = new RailwayForm(YourName, YourTrainNumber, YourAddress);
+         HamzaForm.Cancel()
+         HamzaForm.submit()
+
+
+
+
+
+
+
+        //  let HarryForm = new RailwayForm("Harry", 453)
+
+        //  let HamzaForm = new RailwayForm("Hamza", 679)
+        //  let HamzaForm2 = new RailwayForm("Hamza", 518)
+         
+        //  HarryForm.submit()
+        //  HamzaForm.Cancel()
+        //  HamzaForm2.submit()
+
+    </script>
+</body>
+</html>

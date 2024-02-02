@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring assignment and Spread Operators</title>
+</head>
+
+<body>
+    <script>
+        let arr = [2, 5, 8, 0, 5, 4, 5]
+        let [a, , , d, ...rest] = arr
+
+        console.log(arr);
+        console.log(a, d, rest);
+
+        let { l, u } = { u: 5, l: 9 }
+        console.log(l, u);
+
+        let arr1 = [4, 5, 7, 8];
+
+        function sum(v1, v2, v3, v4) {
+            return v1 + v2 + v3 + v4
+        }
+
+        console.log(sum(...arr1));
+
+        let obj2 = {
+            name: 'Hamza',
+            username: 'MH_Developer1',
+            profession: 'Programmer',
+            type: 'Web Developer'
+        }
+
+        console.log({...obj2, username: 'mh-developer1'});
+
+    </script>
+</body>
+
+</html>
